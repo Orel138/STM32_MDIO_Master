@@ -51,7 +51,7 @@ extern uint32_t SystemCoreClock;
 #endif
 
 #ifndef CMSIS_device_header
-#define CMSIS_device_header    "stm32wbxx.h"
+#define CMSIS_device_header    "stm32h7xx.h"
 #endif /* CMSIS_device_header */
 
 #include CMSIS_device_header
@@ -202,9 +202,9 @@ extern uint32_t SystemCoreClock;
 
 #define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS()
 
-#if defined(STM32WB5Mxx) || defined(STM32WB55xx)
+#if defined(STM32H743xx)
 #define portGET_RUN_TIME_COUNTER_VALUE()    ( HAL_GetTick() )
-#endif /* STM32WB5Mxx | STM32WB55xx */
+#endif /* STM32H7xx */
 
 /* Definitions that map the FreeRTOS port interrupt handlers to their CMSIS
 standard names. */

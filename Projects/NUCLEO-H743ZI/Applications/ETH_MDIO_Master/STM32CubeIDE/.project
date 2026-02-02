@@ -232,6 +232,11 @@
 			<locationURI>PARENT-4-PROJECT_LOC/Common/cli/cli_main.c</locationURI>
 		</link>
 		<link>
+			<name>Application/User/Common/cli/cli_mdio.c</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Common/cli/cli_mdio.c</locationURI>
+		</link>
+		<link>
 			<name>Application/User/Common/cli/cli_uart_drv.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/Common/cli/cli_uart_drv.c</locationURI>

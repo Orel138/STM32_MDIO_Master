@@ -222,7 +222,7 @@ void HAL_RNG_MspInit(RNG_HandleTypeDef* hrng)
     /* Peripheral clock enable */
     __HAL_RCC_RNG_CLK_ENABLE();
     /* RNG interrupt Init */
-    HAL_NVIC_SetPriority(HASH_RNG_IRQn, 0, 0);
+    HAL_NVIC_SetPriority(HASH_RNG_IRQn, 5, 0);
     HAL_NVIC_EnableIRQ(HASH_RNG_IRQn);
     /* USER CODE BEGIN RNG_MspInit 1 */
 
@@ -313,7 +313,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef* huart)
     HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
     /* USART3 interrupt Init */
-    HAL_NVIC_SetPriority(USART3_IRQn, 0, 0);
+    HAL_NVIC_SetPriority(USART3_IRQn, 5, 0);
     HAL_NVIC_EnableIRQ(USART3_IRQn);
     /* USER CODE BEGIN USART3_MspInit 1 */
 

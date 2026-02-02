@@ -345,7 +345,7 @@ void Task_CLI( void * pvParameters )
     FreeRTOS_CLIRegisterCommand( &xCommandDef_uptime );
     FreeRTOS_CLIRegisterCommand( &xCommandDef_assert );
     FreeRTOS_CLIRegisterCommand( &xCommandDef_clear );
-
+    FreeRTOS_CLIRegisterCommand( &xCommandDef_mdio );
 
     char * pcCommandBuffer = NULL;
 

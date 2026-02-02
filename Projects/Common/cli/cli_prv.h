@@ -134,5 +134,6 @@ extern const CLI_Command_Definition_t xCommandDef_uptime;
 extern const CLI_Command_Definition_t xCommandDef_rngtest;
 extern const CLI_Command_Definition_t xCommandDef_assert;
 extern const CLI_Command_Definition_t xCommandDef_clear;
+extern const CLI_Command_Definition_t xCommandDef_mdio;
 
 #endif /* _CLI_PRIV */

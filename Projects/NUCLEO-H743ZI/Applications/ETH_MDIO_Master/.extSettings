@@ -6,5 +6,5 @@ Define=
 HALModule=
 
 [Groups]
-Application/User/Common/cli=../../../../../Projects/Common/cli/cli_main.c;../../../../../Projects/Common/cli/cli_uart_drv.c;../../../../../Projects/Common/cli/cli_utils.c;../../../../../Projects/Common/cli/logging.c;
+Application/User/Common/cli=../../../../../Projects/Common/cli/cli_main.c;../../../../../Projects/Common/cli/cli_uart_drv.c;../../../../../Projects/Common/cli/cli_utils.c;../../../../../Projects/Common/cli/logging.c;../../../../../Projects/Common/cli/cli_mdio.c;
 Middlewares/FreeRTOS/kernel=../../../../../Middlewares/Third_Party/FreeRTOS/kernel/croutine.c;../../../../../Middlewares/Third_Party/FreeRTOS/kernel/event_groups.c;../../../../../Middlewares/Third_Party/FreeRTOS/kernel/list.c;../../../../../Middlewares/Third_Party/FreeRTOS/kernel/queue.c;../../../../../Middlewares/Third_Party/FreeRTOS/kernel/stream_buffer.c;../../../../../Middlewares/Third_Party/FreeRTOS/kernel/tasks.c;../../../../../Middlewares/Third_Party/FreeRTOS/kernel/timers.c;../../../../../Middlewares/Third_Party/FreeRTOS/kernel/portable/GCC/ARM_CM7/r0p1/port.c;../../../../../Middlewares/Third_Party/FreeRTOS/kernel/portable/MemMang/heap_4.c;
