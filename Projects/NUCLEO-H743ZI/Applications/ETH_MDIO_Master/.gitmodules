@@ -1,3 +1,0 @@
-[submodule "Middlewares/Third_Party/FreeRTOS/kernel"]
-	path = Middlewares/Third_Party/FreeRTOS/kernel
-	url = https://github.com/FreeRTOS/FreeRTOS-Kernel.git

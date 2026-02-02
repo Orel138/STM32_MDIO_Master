@@ -74,9 +74,6 @@ UART_HandleTypeDef huart3;
 void SystemClock_Config(void);
 static void MPU_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_USART3_UART_Init(void);
-static void MX_ETH_Init(void);
-static void MX_RNG_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -208,7 +205,7 @@ void SystemClock_Config(void)
   * @param None
   * @retval None
   */
-static void MX_ETH_Init(void)
+void MX_ETH_Init(void)
 {
 
   /* USER CODE BEGIN ETH_Init 0 */
@@ -257,7 +254,7 @@ static void MX_ETH_Init(void)
   * @param None
   * @retval None
   */
-static void MX_RNG_Init(void)
+void MX_RNG_Init(void)
 {
 
   /* USER CODE BEGIN RNG_Init 0 */
@@ -284,7 +281,7 @@ static void MX_RNG_Init(void)
   * @param None
   * @retval None
   */
-static void MX_USART3_UART_Init(void)
+void MX_USART3_UART_Init(void)
 {
 
   /* USER CODE BEGIN USART3_Init 0 */
