@@ -94,7 +94,7 @@ static void vCommand_MDIO( ConsoleIO_t * pxCIO,
             {
                 uint8_t  phyAddr  = (uint8_t)  strtoul( ppcArgv[ PHY_ADDR_INDEX ], NULL, 0 );
                 uint8_t  regAddr  = (uint8_t)  strtoul( ppcArgv[ PHY_REG_INDEX  ], NULL, 0 );
-                uint16_t regValue = (uint16_t) strtoul( ppcArgv[ PHY_VALUE_INDEX ], NULL, 0 );
+                uint16_t regValue = (uint16_t) strtoul( ppcArgv[ PHY_VALUE_INDEX], NULL, 0 );
 
                 if( HAL_ETH_WritePHYRegister(&heth, phyAddr, regAddr, regValue) == HAL_OK)
                 {
@@ -116,17 +116,19 @@ static void vCommand_MDIO( ConsoleIO_t * pxCIO,
             {
                 uint8_t  phyAddr = (uint8_t) strtoul( ppcArgv[ PHY_ADDR_INDEX ], NULL, 0 );
                 uint8_t  regAddr = (uint8_t) strtoul( ppcArgv[ PHY_REG_INDEX  ], NULL, 0 );
-                uint16_t regValue = 0;
+                uint32_t regValue = 0;
 
                 if( HAL_ETH_ReadPHYRegister(&heth, phyAddr, regAddr, &regValue) == HAL_OK)
                 {
                     char buffer[48];
                     char bin[17];
 
-                    uint16_to_binary(regValue, bin);
+                    uint16_t regValue16b = (uint16_t)(regValue & 0xFFFF);
+
+                    uint16_to_binary(regValue16b, bin);
 
                     snprintf( buffer, sizeof(buffer),
-                              "MDIO READ: OK 0x%04X 0b%s\r\n", regValue, bin );
+                              "MDIO READ: OK 0x%04X 0b%s\r\n", regValue16b, bin );
 
                     pxCIO->print( buffer );
                     xSuccess = pdTRUE;

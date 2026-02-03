@@ -92,17 +92,8 @@ static void vHeartbeatTask( void * pvParameters )
 
     while(1)
     {
-//        aPwmLedGsData_app[PWM_LED_RED]  = PWM_LED_GSDATA_OFF;
-//        aPwmLedGsData_app[PWM_LED_BLUE] = PWM_LED_GSDATA_OFF;
-//    	BSP_PWM_LED_On(aPwmLedGsData_app);
-
     	vTaskDelay( pdMS_TO_TICKS( 1000 ) );
-
-//    	aPwmLedGsData_app[PWM_LED_RED]  = PWM_LED_GSDATA_7_0;
-//    	aPwmLedGsData_app[PWM_LED_BLUE] = PWM_LED_GSDATA_7_0;
-//    	BSP_PWM_LED_On(aPwmLedGsData_app);
-
-    	vTaskDelay( pdMS_TO_TICKS( 1000 ) );
+    	HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
     }
 }
 
@@ -301,6 +292,9 @@ void MX_ETH_Init(void)
   TxConfig.CRCPadCtrl = ETH_CRC_PAD_INSERT;
   /* USER CODE BEGIN ETH_Init 2 */
 
+  /* Configure the MDIO Clock */
+  HAL_ETH_SetMDIOClockRange(&heth);
+
   /* USER CODE END ETH_Init 2 */
 
 }
@@ -387,6 +381,7 @@ void MX_USART3_UART_Init(void)
   */
 static void MX_GPIO_Init(void)
 {
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
   /* USER CODE BEGIN MX_GPIO_Init_1 */
 
   /* USER CODE END MX_GPIO_Init_1 */
@@ -398,6 +393,27 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOG_CLK_ENABLE();
+  __HAL_RCC_GPIOE_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, LED_GREEN_Pin|LED_RED_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : LED_GREEN_Pin LED_RED_Pin */
+  GPIO_InitStruct.Pin = LED_GREEN_Pin|LED_RED_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : LED_YELLOW_Pin */
+  GPIO_InitStruct.Pin = LED_YELLOW_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LED_YELLOW_GPIO_Port, &GPIO_InitStruct);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 
