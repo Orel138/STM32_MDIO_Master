@@ -202,9 +202,7 @@ extern uint32_t SystemCoreClock;
 
 #define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS()
 
-#if defined(STM32H743xx)
 #define portGET_RUN_TIME_COUNTER_VALUE()    ( HAL_GetTick() )
-#endif /* STM32H7xx */
 
 /* Definitions that map the FreeRTOS port interrupt handlers to their CMSIS
 standard names. */

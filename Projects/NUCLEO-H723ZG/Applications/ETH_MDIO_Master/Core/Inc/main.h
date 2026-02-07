@@ -41,7 +41,9 @@ extern "C" {
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
-
+extern TIM_HandleTypeDef htim6;
+extern UART_HandleTypeDef huart3;
+extern ETH_HandleTypeDef heth;
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/
@@ -51,12 +53,19 @@ extern "C" {
 
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
+void MX_ETH_Init(void);
+void MX_RNG_Init(void);
+void MX_USART3_UART_Init(void);
 
 /* USER CODE BEGIN EFP */
 
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define LED_GREEN_Pin GPIO_PIN_0
+#define LED_GREEN_GPIO_Port GPIOB
+#define LED_RED_Pin GPIO_PIN_14
+#define LED_RED_GPIO_Port GPIOB
 #define STLK_VCP_RX_Pin GPIO_PIN_8
 #define STLK_VCP_RX_GPIO_Port GPIOD
 #define STLK_VCP_TX_Pin GPIO_PIN_9
@@ -65,6 +74,8 @@ void Error_Handler(void);
 #define SWDIO_GPIO_Port GPIOA
 #define SWCLK_Pin GPIO_PIN_14
 #define SWCLK_GPIO_Port GPIOA
+#define LED_YELLOW_Pin GPIO_PIN_1
+#define LED_YELLOW_GPIO_Port GPIOE
 
 /* USER CODE BEGIN Private defines */
 
